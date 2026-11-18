@@ -34,12 +34,24 @@ Both contributors must also read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 and [`docs/INTERFACES.md`](docs/INTERFACES.md). Those files define the boundary
 that lets both branches merge cleanly.
 
+Codex automatically receives the durable repository instructions in
+[`AGENTS.md`](AGENTS.md). For simulation work, those instructions require Codex
+to read `TRACK_SIMULATION.md` and its source list before proposing changes.
+
+Simulation contributor setup:
+
+```bash
+make setup-sim
+make check-sim
+```
+
 ## Repository layout
 
 ```text
 Laser-Turret/
   src/laser_turret/       Python package: detection, tracking, control, simulation
   tests/                  Unit and later cross-track integration tests
+  scripts/                Contributor setup and environment verification
   config/                 Versioned runtime and safety defaults
   data/                   Dataset manifests; recordings remain untracked
   simulation/             MuJoCo XML, simplified assets, and scenarios
