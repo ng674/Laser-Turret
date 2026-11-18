@@ -1,0 +1,182 @@
+[
+  {
+    "part": "base_left",
+    "quantity": 1,
+    "size_mm": [
+      130.0,
+      100.0,
+      8.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "base_right",
+    "quantity": 1,
+    "size_mm": [
+      120.0,
+      100.0,
+      12.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "base",
+    "quantity": 1,
+    "size_mm": [
+      110.0,
+      86.0,
+      5.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "leg",
+    "quantity": 2,
+    "size_mm": [
+      50.0,
+      80.0,
+      18.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "carrier",
+    "quantity": 1,
+    "size_mm": [
+      66.0,
+      76.0,
+      64.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "head",
+    "quantity": 1,
+    "size_mm": [
+      30.0,
+      52.0,
+      14.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "horn_spacer",
+    "quantity": 2,
+    "size_mm": [
+      19.0,
+      19.0,
+      8.35
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "camera_post",
+    "quantity": 1,
+    "size_mm": [
+      110.0,
+      64.0,
+      30.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "camera_pad",
+    "quantity": 1,
+    "size_mm": [
+      100.0,
+      78.0,
+      5.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "electronics_tray",
+    "quantity": 1,
+    "size_mm": [
+      200.0,
+      130.0,
+      9.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "tray_foot",
+    "quantity": 2,
+    "size_mm": [
+      16.0,
+      16.0,
+      8.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "switch_cradle",
+    "quantity": 1,
+    "size_mm": [
+      46.0,
+      40.0,
+      26.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "servo_coupon",
+    "quantity": 1,
+    "size_mm": [
+      60.0,
+      34.0,
+      5.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "horn_coupon",
+    "quantity": 1,
+    "size_mm": [
+      30.0,
+      30.0,
+      4.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  },
+  {
+    "part": "laser_coupon",
+    "quantity": 1,
+    "size_mm": [
+      20.0,
+      12.0,
+      10.0
+    ],
+    "min_z": 0.0,
+    "closed_edges": true,
+    "shells": 1
+  }
+]

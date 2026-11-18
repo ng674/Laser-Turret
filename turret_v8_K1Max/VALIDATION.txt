@@ -1,0 +1,215 @@
+shared_base
+Geometries in cache: 20
+Geometry cache size in bytes: 141568
+CGAL Polyhedrons in cache: 20
+CGAL cache size in bytes: 1691500
+Total rendering time: 0:00:00.039
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      12
+   Vertices:     2271
+   Facets:       4586
+
+base
+Geometries in cache: 23
+Geometry cache size in bytes: 176136
+CGAL Polyhedrons in cache: 13
+CGAL cache size in bytes: 1626000
+Total rendering time: 0:00:00.033
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      7
+   Vertices:     1360
+   Facets:       2744
+
+leg
+Geometries in cache: 16
+Geometry cache size in bytes: 108576
+CGAL Polyhedrons in cache: 6
+CGAL cache size in bytes: 840000
+Total rendering time: 0:00:00.010
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      6
+   Vertices:      888
+   Facets:       1796
+
+carrier
+Geometries in cache: 34
+Geometry cache size in bytes: 207728
+CGAL Polyhedrons in cache: 21
+CGAL cache size in bytes: 2325000
+Total rendering time: 0:00:00.033
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      8
+   Vertices:     1480
+   Facets:       2988
+
+head
+Geometries in cache: 25
+Geometry cache size in bytes: 166152
+CGAL Polyhedrons in cache: 12
+CGAL cache size in bytes: 836750
+Total rendering time: 0:00:00.017
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      9
+   Vertices:     1140
+   Facets:       2312
+
+horn_spacer
+Geometries in cache: 10
+Geometry cache size in bytes: 82480
+CGAL Polyhedrons in cache: 3
+CGAL cache size in bytes: 360000
+Total rendering time: 0:00:00.009
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      5
+   Vertices:      576
+   Facets:       1168
+
+spacer_core
+Geometries in cache: 10
+Geometry cache size in bytes: 82480
+CGAL Polyhedrons in cache: 3
+CGAL cache size in bytes: 360000
+Total rendering time: 0:00:00.009
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      5
+   Vertices:      576
+   Facets:       1168
+
+shim_05
+Geometries in cache: 10
+Geometry cache size in bytes: 82480
+CGAL Polyhedrons in cache: 3
+CGAL cache size in bytes: 360000
+Total rendering time: 0:00:00.009
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      5
+   Vertices:      576
+   Facets:       1168
+
+shim_10
+Geometries in cache: 10
+Geometry cache size in bytes: 82480
+CGAL Polyhedrons in cache: 3
+CGAL cache size in bytes: 360000
+Total rendering time: 0:00:00.009
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      5
+   Vertices:      576
+   Facets:       1168
+
+shim_15
+Geometries in cache: 10
+Geometry cache size in bytes: 82480
+CGAL Polyhedrons in cache: 3
+CGAL cache size in bytes: 360000
+Total rendering time: 0:00:00.009
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      5
+   Vertices:      576
+   Facets:       1168
+
+camera_post
+Geometries in cache: 19
+Geometry cache size in bytes: 135192
+CGAL Polyhedrons in cache: 10
+CGAL cache size in bytes: 1016750
+Total rendering time: 0:00:00.016
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      6
+   Vertices:      900
+   Facets:       1820
+
+camera_pad
+Geometries in cache: 19
+Geometry cache size in bytes: 143144
+CGAL Polyhedrons in cache: 15
+CGAL cache size in bytes: 681250
+Total rendering time: 0:00:00.014
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      7
+   Vertices:      796
+   Facets:       1616
+
+electronics_tray
+Geometries in cache: 20
+Geometry cache size in bytes: 141568
+CGAL Polyhedrons in cache: 29
+CGAL cache size in bytes: 2012000
+Total rendering time: 0:00:00.035
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      25
+   Vertices:     2724
+   Facets:       5544
+
+tray_foot
+Geometries in cache: 5
+Geometry cache size in bytes: 41240
+CGAL Polyhedrons in cache: 1
+CGAL cache size in bytes: 72000
+Total rendering time: 0:00:00.005
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      1
+   Vertices:      288
+   Facets:        576
+
+switch_cradle
+Geometries in cache: 14
+Geometry cache size in bytes: 92080
+CGAL Polyhedrons in cache: 4
+CGAL cache size in bytes: 400000
+Total rendering time: 0:00:00.009
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      4
+   Vertices:      696
+   Facets:       1404
+
+servo_coupon
+Geometries in cache: 18
+Geometry cache size in bytes: 136768
+CGAL Polyhedrons in cache: 12
+CGAL cache size in bytes: 1434000
+Total rendering time: 0:00:00.027
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      3
+   Vertices:      976
+   Facets:       1960
+
+horn_coupon
+Geometries in cache: 12
+Geometry cache size in bytes: 85408
+CGAL Polyhedrons in cache: 3
+CGAL cache size in bytes: 362000
+Total rendering time: 0:00:00.008
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      5
+   Vertices:      584
+   Facets:       1184
+
+laser_coupon
+Geometries in cache: 4
+Geometry cache size in bytes: 25600
+CGAL Polyhedrons in cache: 1
+CGAL cache size in bytes: 14500
+Total rendering time: 0:00:00.001
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      0
+   Vertices:       58
+   Facets:        112

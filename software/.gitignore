@@ -1,0 +1,23 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Recordings, labels, trained weights, and generated simulation outputs can be large.
+data/raw/*
+data/interim/*
+data/processed/*
+models/*
+runs/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!runs/.gitkeep
+

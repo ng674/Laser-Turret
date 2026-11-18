@@ -1,0 +1,29 @@
+[runtime]
+mode = "VISION_ONLY"
+seed = 530
+
+[coordinates]
+# Image coordinates: origin at top-left; +x right; +y down.
+normalized_output = true
+
+[tracker]
+process_variance = 30.0
+measurement_variance = 16.0
+association_distance_px = 90.0
+minimum_confirmed_hits = 3
+maximum_missed_frames = 8
+
+[selection]
+allowed_labels = ["ball", "marker", "cup", "toy"]
+minimum_confidence = 0.60
+people_are_never_targets = true
+
+[motion_gate]
+enabled = false
+lost_track_action = "HOLD"
+stale_after_ms = 150
+
+[optical_source]
+enabled = false
+autonomous_activation = false
+

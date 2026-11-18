@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laser-turret-research"
+version = "0.1.0"
+description = "Vision, tracking, simulation, and control research workspace"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+vision = ["numpy>=2.0", "opencv-python>=4.10"]
+ml = ["torch>=2.5", "torchvision>=0.20"]
+sim = ["mujoco>=3.2", "gymnasium>=1.0"]
+dev = ["pytest>=8.0", "ruff>=0.8", "mypy>=1.13"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+

@@ -1,0 +1,162 @@
+[
+  {
+    "file": "group_01.stl",
+    "size_mm": [
+      272.0,
+      252.0,
+      18.0
+    ],
+    "parts": [
+      {
+        "name": "electronics_tray",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 0,
+        "y": 0,
+        "dx": 200.0,
+        "dy": 130.0
+      },
+      {
+        "name": "shared_base",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 0,
+        "y": 152.0,
+        "dx": 230.0,
+        "dy": 100.0
+      },
+      {
+        "name": "leg",
+        "copy": 2,
+        "angle": 0,
+        "turn": false,
+        "x": 222.0,
+        "y": 0,
+        "dx": 50.0,
+        "dy": 80.0
+      }
+    ]
+  },
+  {
+    "file": "group_02.stl",
+    "size_mm": [
+      280.0,
+      279.0,
+      64.0
+    ],
+    "parts": [
+      {
+        "name": "base",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 0,
+        "y": 0,
+        "dx": 110.0,
+        "dy": 86.0
+      },
+      {
+        "name": "camera_pad",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 132.0,
+        "y": 0,
+        "dx": 100.0,
+        "dy": 78.0
+      },
+      {
+        "name": "camera_post",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 132.0,
+        "y": 100.0,
+        "dx": 110.0,
+        "dy": 64.0
+      },
+      {
+        "name": "carrier",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 0,
+        "y": 186.0,
+        "dx": 66.0,
+        "dy": 76.0
+      },
+      {
+        "name": "leg",
+        "copy": 1,
+        "angle": 0,
+        "turn": true,
+        "x": 0,
+        "y": 108.0,
+        "dx": 80.0,
+        "dy": 50.0
+      },
+      {
+        "name": "switch_cradle",
+        "copy": 1,
+        "angle": 0,
+        "turn": true,
+        "x": 88.0,
+        "y": 186.0,
+        "dx": 40.0,
+        "dy": 46.0
+      },
+      {
+        "name": "head",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 150.0,
+        "y": 186.0,
+        "dx": 30.0,
+        "dy": 52.0
+      },
+      {
+        "name": "horn_spacer",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 88.0,
+        "y": 260.0,
+        "dx": 19.0,
+        "dy": 19.0
+      },
+      {
+        "name": "horn_spacer",
+        "copy": 2,
+        "angle": 0,
+        "turn": false,
+        "x": 129.0,
+        "y": 260.0,
+        "dx": 19.0,
+        "dy": 19.0
+      },
+      {
+        "name": "tray_foot",
+        "copy": 1,
+        "angle": 0,
+        "turn": false,
+        "x": 264.0,
+        "y": 0,
+        "dx": 16.0,
+        "dy": 16.0
+      },
+      {
+        "name": "tray_foot",
+        "copy": 2,
+        "angle": 0,
+        "turn": false,
+        "x": 264.0,
+        "y": 38.0,
+        "dx": 16.0,
+        "dy": 16.0
+      }
+    ]
+  }
+]
