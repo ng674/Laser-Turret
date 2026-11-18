@@ -10,7 +10,7 @@ reticle for all development and calibration.
 
 ## Current state
 
-- Mechanical source of truth: `../turret_v8_K1Max/cad/main.scad`.
+- Mechanical source of truth: `../cad/turret_v8_K1Max/cad/main.scad`.
 - Nominal printed assembly: 14 pieces in two K1 Max print batches.
 - Camera location in the OpenSCAD model is offset from the pan/tilt axes; do not
   assume camera pixels map directly to joint angles.

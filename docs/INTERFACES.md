@@ -53,7 +53,7 @@ and include wall-clock session metadata.
 
 ## MuJoCo asset path
 
-Use `../../turret_v8_K1Max/cad/main.scad` as the geometric reference. Export or
+Use `../cad/turret_v8_K1Max/cad/main.scad` as the geometric reference. Export or
 create simplified bodies for the foundation, pan carrier, tilt head, and camera.
 Exclude print batches, support geometry, electronics clutter, fastener detail,
 and duplicate historical revisions. Record every simplification and measured
