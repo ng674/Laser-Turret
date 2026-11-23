@@ -1,0 +1,131 @@
+<!--
+  Simplified two-axis V8 turret, derived from cad/turret_v8_K1Max/cad/main.scad.
+  World frame = OpenSCAD assembly frame converted mm -> m (+Z up, optical axis -Y at zero pose).
+  Every mass, inertia, gain, armature, and camera field of view here is PROVISIONAL and unmeasured.
+  See simulation/mujoco/README.md for the source of each dimension.
+-->
+<mujoco model="laser_turret_v8">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" integrator="implicitfast"/>
+
+  <visual>
+    <global offwidth="1280" offheight="960"/>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.5 0.5 0.5"/>
+  </visual>
+
+  <default>
+    <!-- Kinematic twin: no contacts between turret parts. -->
+    <!-- PROVISIONAL: uniform nominal PLA density; infill and real parts are not modelled. -->
+    <geom contype="0" conaffinity="0" density="1240"/>
+    <default class="printed">
+      <geom type="box" rgba="0.28 0.47 0.60 1"/>
+    </default>
+    <default class="moving">
+      <geom type="box" rgba="0.91 0.64 0.29 1"/>
+    </default>
+    <default class="servo">
+      <!-- PROVISIONAL: servo mass is not measured; this density is a placeholder. -->
+      <geom type="box" density="1500" rgba="0.20 0.23 0.25 1"/>
+    </default>
+    <default class="horn">
+      <geom type="cylinder" rgba="0.75 0.75 0.75 1"/>
+    </default>
+    <default class="visual_only">
+      <geom mass="0" group="2"/>
+    </default>
+    <default class="axis">
+      <!-- PROVISIONAL: armature stands in for unmeasured gearbox reflected inertia. -->
+      <joint type="hinge" armature="0.001" damping="0.002"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" rgb1="0.82 0.83 0.85" rgb2="0.74 0.75 0.77"
+             width="512" height="512"/>
+    <material name="floor" texture="grid" texrepeat="8 8"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0.3 -0.6 1.0" dir="-0.3 0.6 -1" diffuse="0.6 0.6 0.6"/>
+    <geom name="floor" type="plane" size="1.5 1.5 0.01" material="floor"/>
+
+    <!-- Fixed foundation: shared_base, legs, servo deck (main.scad lines 40-80, 131-135). -->
+    <body name="base">
+      <geom name="foundation" class="printed" pos="0.060 0 0.004" size="0.115 0.050 0.004"/>
+      <geom name="leg_left_lower" class="printed" pos="-0.046 0 0.0105" size="0.009 0.040 0.0025"/>
+      <geom name="leg_left_web" class="printed" pos="-0.046 0 0.033" size="0.004 0.024 0.020"/>
+      <geom name="leg_left_upper" class="printed" pos="-0.046 0 0.0555" size="0.009 0.040 0.0025"/>
+      <geom name="leg_right_lower" class="printed" pos="0.046 0 0.0105" size="0.009 0.040 0.0025"/>
+      <geom name="leg_right_web" class="printed" pos="0.046 0 0.033" size="0.004 0.024 0.020"/>
+      <geom name="leg_right_upper" class="printed" pos="0.046 0 0.0555" size="0.009 0.040 0.0025"/>
+      <geom name="servo_deck" class="printed" pos="0 0 0.0605" size="0.055 0.043 0.0025"/>
+      <geom name="pan_servo" class="servo" pos="0.0125 0 0.042" size="0.02261 0.01236 0.016"/>
+      <geom name="pan_horn" class="horn" pos="0 0 0.0596" size="0.0096 0.0016"/>
+
+      <!-- Camera post, pad and camera envelope at camera_x = 125 mm (main.scad lines 89-107, 143-146). -->
+      <geom name="camera_post_foot" class="printed" pos="0.125 0 0.0105" size="0.015 0.032 0.0025"/>
+      <geom name="camera_pillar_left" class="printed" pos="0.125 -0.028 0.063" size="0.006 0.004 0.050"/>
+      <geom name="camera_pillar_right" class="printed" pos="0.125 0.028 0.063" size="0.006 0.004 0.050"/>
+      <geom name="camera_post_top" class="printed" pos="0.125 0 0.1155" size="0.015 0.032 0.0025"/>
+      <geom name="camera_pad" class="printed" pos="0.125 0 0.1205" size="0.050 0.039 0.0025"/>
+      <!-- Envelope of camera + clip, not its real shape or mass (main.scad comment, line 144). -->
+      <geom name="camera_envelope" type="box" pos="0.125 0 0.14465" size="0.047 0.0355 0.02165"
+            rgba="0.18 0.20 0.23 0.85"/>
+      <geom name="camera_lens" type="cylinder" pos="0.125 -0.0375 0.153" euler="1.5707963 0 0"
+            size="0.0065 0.0015" rgba="0.50 0.80 0.86 1"/>
+      <!-- Camera frame: looks along world -Y, image up = world +Z.
+           PROVISIONAL: fovy is MuJoCo's default placeholder, not the webcam's calibrated field of view. -->
+      <camera name="base_camera" pos="0.125 -0.039 0.153" xyaxes="-1 0 0 0 0 1" fovy="45"/>
+      <site name="camera_optical_center" pos="0.125 -0.039 0.153" size="0.003" rgba="0.5 0.8 0.86 1"/>
+    </body>
+
+    <!-- Pan stage: frame origin = top of pan horn spacer, 8 + 50 + 10 mm (main.scad line 137). -->
+    <body name="pan" pos="0 0 0.068">
+      <joint name="pan" class="axis" axis="0 0 1" range="-1.5707963 1.5707963"/>
+      <geom name="pan_horn_spacer" class="horn" pos="0 0 -0.0034" size="0.0095 0.0034"/>
+      <!-- carrier(): horn plate + vertical tilt-servo wall (main.scad lines 48-52). -->
+      <geom name="carrier_plate" class="moving" pos="0 0 0.0025" size="0.033 0.038 0.0025"/>
+      <geom name="carrier_wall" class="moving" pos="-0.0285 0 0.032" size="0.0025 0.038 0.032"/>
+      <geom name="tilt_servo" class="servo" pos="-0.047 0.0125 0.039" size="0.016 0.02261 0.01236"/>
+      <geom name="tilt_horn" class="horn" pos="-0.0296 0 0.039" euler="0 1.5707963 0"
+            size="0.0096 0.0016"/>
+
+      <!-- Tilt stage: origin at (-31 + 10, 0, 39) mm in the pan frame; axis = pan +X (main.scad line 141).
+           Body axes kept parallel to the pan frame; head geometry is rotated into it by hand. -->
+      <body name="tilt" pos="-0.021 0 0.039">
+        <joint name="tilt" class="axis" axis="1 0 0" range="-0.7853982 0.7853982"/>
+        <geom name="tilt_horn_spacer" class="horn" fromto="-0.0068 0 0 0 0 0" size="0.0095"/>
+        <!-- head(): mounting plate, forward plate, saddle (main.scad lines 55-63). -->
+        <geom name="head_plate" class="moving" pos="0.002 0 0" size="0.002 0.015 0.015"/>
+        <geom name="head_forward_plate" class="moving" pos="0.002 -0.025 0" size="0.002 0.012 0.014"/>
+        <geom name="head_saddle" class="moving" pos="0.0089 -0.025 0" size="0.0051 0.011 0.010"/>
+        <!-- Emitter barrel stand-in, 10.5 mm x 19 mm, optical axis -Y. Geometry only; nothing is emitted. -->
+        <geom name="emitter_barrel" type="cylinder" fromto="0.014 -0.016 0 0.014 -0.035 0"
+              size="0.00525" rgba="0.71 0.71 0.71 1"/>
+        <site name="aim_origin" pos="0.014 -0.035 0" size="0.002" rgba="1 0.2 0.2 1"/>
+        <!-- Visual-only aim indicator for inspecting pointing direction in renders. -->
+        <geom name="aim_indicator" class="visual_only" type="cylinder"
+              fromto="0.014 -0.035 0 0.014 -0.935 0" size="0.0008" rgba="1 0.2 0.2 0.35"/>
+      </body>
+    </body>
+
+    <!-- Static reference marker 1 m in front of the zero-pose aim line. Not a target class. -->
+    <body name="reference_marker" pos="-0.007 -1.0 0.107">
+      <geom name="reference_marker" type="sphere" size="0.02" rgba="0.2 0.7 0.3 1" mass="0"/>
+    </body>
+  </worldbody>
+
+  <!-- PROVISIONAL servo stand-ins: position servos with unmeasured gain and no torque limit.
+       ctrlrange matches the fake plant's provisional soft limits. -->
+  <actuator>
+    <position name="pan" joint="pan" kp="1.0" dampratio="1" ctrlrange="-1.5707963 1.5707963"/>
+    <position name="tilt" joint="tilt" kp="1.0" dampratio="1" ctrlrange="-0.7853982 0.7853982"/>
+  </actuator>
+
+  <sensor>
+    <jointpos name="pan_pos" joint="pan"/>
+    <jointpos name="tilt_pos" joint="tilt"/>
+    <jointvel name="pan_vel" joint="pan"/>
+    <jointvel name="tilt_vel" joint="tilt"/>
+  </sensor>
+</mujoco>
